@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataBaseConnectionBean" class="com.sarindy.jdbcSpring.DataBaseConnectionManager">
+
+		<!-- <property name="hotDrink" ref="teaBean" /> -->
+		<property name="iDatabase" ref="sqlServer" />
+	
+	</bean>
+
+
+	<bean id="sqlServer" class="com.sarindy.jdbcSpring.SQLServer.JDBCSqlServer">
+	
+	<property name="userName" value="${dbUser}"/>
+	<property name="pwd" value="${dbPassword}"/>
+	<property name="dbUri" value="${dbURI}"/>
+	<property name="driverName" value="${dbDriverName}"/>
+	
+
+	</bean>
+	
+	<!-- This class bean let the project use the property file -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:jdbcConfig.properties</value>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+</beans>
