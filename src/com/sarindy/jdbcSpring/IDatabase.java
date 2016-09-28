@@ -6,5 +6,7 @@ public interface IDatabase {
 	
 	public Connection GetDataBaseObj();
 	
+	public void CloseDatabase();
+	
 
 }

@@ -12,7 +12,7 @@
 	</bean>
 
 
-	<bean id="sqlServer" class="com.sarindy.jdbcSpring.SQLServer.JDBCSqlServer">
+	<bean id="sqlServer" class="com.sarindy.jdbcSpring.JDBCSqlServer">
 	
 	<property name="userName" value="${dbUser}"/>
 	<property name="pwd" value="${dbPassword}"/>

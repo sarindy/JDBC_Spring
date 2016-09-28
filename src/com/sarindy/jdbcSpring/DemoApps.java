@@ -33,5 +33,8 @@ public class DemoApps {
 					+ rs.getString("LAST_NAME"));
 
 		}
+		
+		rs.close();
+		dbObj.CloseDataBase();
 	}
 }

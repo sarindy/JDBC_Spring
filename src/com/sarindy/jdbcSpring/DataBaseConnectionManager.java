@@ -19,6 +19,10 @@ public class DataBaseConnectionManager {
 		
 	}
 	
+	public void CloseDataBase(){
+		this.iDatabase.CloseDatabase();
+	}
+	
 	
 
 }
