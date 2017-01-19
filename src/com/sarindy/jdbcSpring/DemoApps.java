@@ -13,10 +13,8 @@ public class DemoApps {
 	public static void main(String[] args) throws SQLException {
 
 		@SuppressWarnings("resource")
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"jdbcSpringConfig.xml");
-		DataBaseConnectionManager dbObj = (DataBaseConnectionManager) context
-				.getBean("dataBaseConnectionBean");
+		ApplicationContext context = new ClassPathXmlApplicationContext("jdbcSpringConfig.xml");
+		DataBaseConnectionManager dbObj = (DataBaseConnectionManager) context.getBean("dataBaseConnectionBean");
 
 		Connection myConn = dbObj.GetDBConnection();
 
@@ -29,9 +27,7 @@ public class DemoApps {
 		ResultSet rs = prepareStatement.executeQuery();
 
 		while (rs.next()) {
-			System.out.println(rs.getString("FIRST_NAME") + " "
-					+ rs.getString("LAST_NAME"));
-
+			System.out.println(rs.getString("FIRST_NAME") + " "	+ rs.getString("LAST_NAME"));
 		}
 		
 		rs.close();
